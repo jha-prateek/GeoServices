@@ -197,8 +197,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 Log.d("Out", locationOut.toString());
                 JSONArray locationList = locationOut.getJSONArray("location");
                 for(int i=0; i<locationList.length(); i++){
-                    System.out.print(locationList.getJSONObject(i).getJSONObject("poi").getString("alias") + " ");
-                    System.out.println(locationList.getJSONObject(i).getJSONObject("distance").getString("value"));
+//                    System.out.print(locationList.getJSONObject(i).getJSONObject("poi").getString("alias") + " ");
+//                    System.out.println(locationList.getJSONObject(i).getJSONObject("distance").getString("value"));
+                    System.out.println(locationList.getJSONObject(i).getJSONObject("poi").getJSONObject("contactDetails").
+                            getJSONObject("address").getString("formattedAddress"));
                 }
                 res = locationOut.toString();
 
